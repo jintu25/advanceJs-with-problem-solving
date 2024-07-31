@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object practice</title>
+</head>
+<body>
+    <script>
+        // copy reference change one object value
+        const product = {
+            name: 't-shirt',
+            size: 'L',
+            price : 230
+        }
+        let copyProduct = {product};
+        copyProduct.size = "XL";
+        console.log(copyProduct)
+
+        // bracket notation to display
+        const bracketNotation = {
+            name: "jintu",
+            "status": "hindu"
+        }
+        console.log('bracket notation display is: ', bracketNotation['status'])
+        // console two variable;
+        const practice = {
+            employ: "worker",
+            message: 'good job',
+            status : 'complete'
+        }
+        const {message, status} = practice;
+        console.log(message)
+        console.log(status)
+    </script>
+</body>
+</html>

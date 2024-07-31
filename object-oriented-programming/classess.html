@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>classes practice</title>
+</head>
+<body>
+    <script>
+        // # when use classes
+        // we use classes for when we use so many object 
+        // bank er sob employee er hissab store korar jhonno class bebhohar kora jete pare
+        class car {
+            constructor(brand, mileage){   //constructor method
+                console.log('creating object')
+                this.brand = brand;
+                this.mileage = mileage
+            }
+            start(){
+                console.log('cart started')
+            }
+            stop(){
+                console.log('cart stopped')
+            }
+        }
+        let cycle = new car('walton', 10) //constructor
+        let bus = new car('birotihin', 12) //constructor
+        console.log(cycle)
+        console.log(bus)
+
+        // *inheritance in js*
+        // inheritance is passing down properties and methods
+        // from parent class to child class.
+        //  * if child and parent have same method, child's method will be used
+            
+        // example of inheritance
+        class person{
+            constructor(name){
+                console.log('parent constructor')
+                this.species = 'home species'
+                this.name = name;
+            }
+            eat(){
+                console.log('eating')
+            }
+            sleep(){
+                console.log('sleeping')
+            }
+            work(){
+                console.log('guray ar kay....')
+            }
+        }
+        class engineer extends person {
+            constructor(name){
+                super(name)  //invoked parent class constructor
+            }
+            work(){
+                console.log('hard working...')
+            }
+        }
+        class doctor extends person {
+                work() {
+                    console.log('hard working by doctor...')
+                }
+            }
+        let jintu = new engineer('jintu')
+
+        // problem practice
+        // Qs.You are creating a website for your college.Create a class User with 2 properties, name &
+        // email.It also has a method called viewData() that allows user to view website data.
+        // Let‘s Practice
+
+        let data = 'secret data'
+        class user {
+            constructor(name, email){
+                this.name = name;
+                this.email = email;
+            }
+            data() {
+                console.log('data =', data)
+            }
+        }
+        // Qs.Create a new class called Admin which inherits from User.Add a new method called
+        // editData to Admin that allows it to edit website data.
+        class admin extends user{
+            constructor(name, email){
+                super(name, email)
+            }
+            editValue(){
+                data = 'some value edit' //edit data value
+            }
+        }
+        let user1 = new user('jintu', 'jintu@gmail.com')
+        let user2 = new user('abul', 'abul@gmail.com')
+        let admin1 = new admin('admin', 'admin@gmail.com')
+
+       
+
+
+
+    </script>
+</body>
+</html>

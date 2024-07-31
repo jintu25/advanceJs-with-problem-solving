@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>api practice</title>
+</head>
+
+<body>
+    <p class="para"></p>
+    <script>
+        let url = 'https://jsonplaceholder.typicode.com/users'
+        let para = document.querySelector('.para')
+        const getUser = async() => {
+            console.log('getting user...')
+            let response = await fetch(url)
+            let data = response.json()
+            console.log(data[1])
+        }
+        getUser()
+    </script>
+</body>
+</html>

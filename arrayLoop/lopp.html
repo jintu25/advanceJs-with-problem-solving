@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>loop</title>
+</head>
+<body>
+    <script>
+        
+        // for(let num=0; num <= 10; num++){
+        //     console.log(num)
+        // }
+        // without loop use summing array value
+        let number = [2, 3, 4, 5, 10]
+        let sum = 0;
+        const sumValue = number.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+        console.log('use reduce and sum value: ',sumValue)
+
+        // array value summing process
+        let num = [2, 3, 4, 5, 6, 7, 8]
+        let value = 0;
+        for(let i = 0; i < num.length; i++){
+            value += num[i]
+        }
+        console.log(value)
+
+        // square array
+            // let arr = [2, 3, 4, 5]
+            // let squares = []
+            // for (let i = 0; i < arr.length; i++) {
+            //     squares[i] = arr[i] * arr[i]
+            // }
+            // console.log('square value is:', squares)
+
+
+            //  /***** --- problem practice ----- ******/
+
+            // create a array number [5, 6] than add 3 in begaineer and add 7 in end
+            let addValue = [5, 6]
+            const addBe= addValue.unshift(3)
+                // const addre = addValue.shift() //remove
+            const addB = addValue.push(7)
+            console.log(addValue)
+
+            // find array particular position
+                function getElement(arr, position) {
+                    return arr[position - 1]
+                }
+                let arr = [1, 2, 3, 4, 5, 5, 6]
+                console.log(getElement(arr, 3))
+
+           // array copy use with slice method
+            function copyArray(arrNumber) {
+                return arrNumber.slice(0, arrNumber.length)
+            }
+            let arrNumber = [2, 3, 4, 5, 6]
+            let copyArrayResult = copyArray(arrNumber)
+            copyArrayResult[0] = 12;
+            console.log('copy array is:', copyArrayResult)
+
+            // first 5 prime number print
+            function isPrime(primeNum){
+                for(let i = 2; i < primeNum; i++){
+                    if(primeNum % 2 === 0){
+                        return false
+                    }
+                    return true
+                }
+            }
+            let primeNum = 2;
+            let i = 0
+            // while(i < 5)   // this is one way 
+            while(true) // here is another way use break statement
+            {
+                if(isPrime(primeNum)){
+                    console.log(primeNum)
+                    i++;
+                    if(i >= 5){
+                        break
+                    }
+                }
+                primeNum++
+            }
+           
+
+            // create loop print number 1 to 10 reverse order
+            // for(let i = 10; i > 1 ; i--){
+            //     console.log(i)
+            // }
+            // another way to print 10 to 1 print
+            for (let i = 0; i < 10; i++){
+                console.log(10 - i)
+            }
+
+            // convert array to string //
+            let arrayValue = ['jintu', 'he', "is", 'a software engineer']
+            let result = arrayValue.join(" ") // join use and he join array value
+            // let result2 = arrayValue.toString()
+            let result2 = ' '
+            for(i = 0; i < arrayValue.length; i++){
+                result2 += arrayValue[i] + ' '
+            }
+
+            console.log('convert value is: ', result, result2)
+
+</script>
+</body>
+</html>

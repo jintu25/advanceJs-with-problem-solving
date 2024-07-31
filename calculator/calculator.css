@@ -1,0 +1,27 @@
+.container{
+    border: 1px solid #cccccc;
+    width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 8px;
+}
+.display{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    height: 60px;
+    font-size: 22px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 12px;
+}
+button{
+    height: 100%;
+    padding: 15px;
+    width: 100%;
+    font-size: 22px;
+}

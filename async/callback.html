@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>callback</title>
+</head>
+<body>
+    <h3 class="demo"></h3>
+    <script>
+        // /*** synchronous ***/
+        // protom ta load howar por second program run hobe. er age porjonto eta 
+        // opekkay takbe//
+        // when first program completed and this time second program is loaded
+        // and when completed second program than run third program
+        // the way to synchronous program
+
+        //console.log('first') //first run second is loaded
+        //console.log('second') //second run third is loaded
+        //console.log('third') // two ar finish than this code run
+
+        // *** asynchronous program ***/
+        // kuno tar jonno opekka korbe na parallally cholte takbe
+        // example of asynchronous
+        // console.log('async1')
+            // console.log('async2')
+            setTimeout(() => {  //settimeOut work asynchronously
+                // console.log('hello async')
+            }, 4000);
+        // console.log('async3')
+        // console.log('async4')
+
+
+            // *** call back function *** //
+            function sum(a, b){
+                console.log(a+b)
+            }
+            function calculate(a, b, sumCallback ){ //sum callback is callback func
+                sumCallback (a, b)
+            }
+            calculate(4, 5, sum) //don't use sum() callback not use parethase
+
+            // first call data 1 than wait 2 second and than run second program
+            // this is callback function
+
+            function getData(data, nextData){
+                setTimeout(() => {
+                    console.log('data is:', data)
+                    if (nextData) {
+                        nextData()
+                    }
+                }, 2000);
+            }
+            // this is not good for understandable program that's way 
+            // call this program callback hell
+            // callback hell solve korar jonno ashe promise
+
+            // *** callback hell ***//
+            // getData(2, () => {
+            //     getData(3, () => {
+            //         getData(4, () => {
+            //             getData(5)
+            //         })
+            //     })
+            // })
+
+            // *** promise ***//
+
+            // let promise = new Promise((resolve, reject) => {
+            //     console.log('i am promise function')
+            //     // resolve('success')
+            //     reject('error occur')
+            // })
+
+            // let myPromise = new Promise(function (myResolve, myReject) {
+            //         setTimeout(function () { myResolve("I love You !!");
+            //      }, 3000);
+            // });
+            // myPromise.then(function (value) {
+            //     document.querySelector(".demo").innerHTML = value;
+            // });
+
+            function asyncFun  () {
+                return new Promise((resolve, reject)=>{
+                    setTimeout(() => {
+                        console.log('some data')
+                        resolve('success')
+                    }, 4000)
+                })
+            }
+            function asyncFun1() {
+                    return new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            console.log('some data')
+                            resolve('success')
+                        }, 4000)
+                    })
+                }
+            console.log('data fetching...')
+            asyncFun().then(res => {
+                console.log(res)
+                console.log('data fetching 2')
+                asyncFun1().then(res => { // data chaining....
+                    console.log(res)
+                })
+            })
+
+    </script>
+
+</body>
+</html>

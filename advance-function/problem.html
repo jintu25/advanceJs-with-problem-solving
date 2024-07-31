@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>anonymous function</title>
+    <style>
+        .button{
+            width: 80px;
+            height: 20px;
+            background-color:red;
+            color: white;
+            font-size: 15px;
+            border-radius: 5px;
+            border: none;
+            font-family: bold;
+        }
+        .click-button{
+            width: 160px;
+            height: 40px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">click me</button>
+    
+    <script>
+        //click button and button show double and work after 2 second;
+        document.querySelector('.button').addEventListener('click', event => {
+            setTimeout(clickBtn, 2000)
+        }) 
+        function clickBtn() {
+            document.querySelector('.button').classList.add('click-button')
+        }
+
+        // use anonymous function and multiply two numbers;
+        let multiply = (num1, num2) => num1 * num2;        
+        console.log('multiply value is: ', multiply(4, 5))
+
+        //  use foreach and sum all of array value
+        let sum = [1, 5, 2, 2, 5]
+        let total = 0;
+        sum.forEach(num => {
+            total += num;
+        })
+        console.log('total value is:', total)
+
+        // use map method and find square in the array value
+        let square = [3, 4, 5, 6]
+        //array multiply
+        let squareValue = square.map(squ => squ * squ)
+        console.log(squareValue)
+        
+        
+
+    </script>
+</body>
+</html>
